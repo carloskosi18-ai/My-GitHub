@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Criar Conta | Arrenda+ Luanda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1><i class="fas fa-home"></i> Arrenda+ Luanda</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="login.html" class="btn-admin">Iniciar Sessão <i class="fa-regular fa-user"></i></a>
+    </nav>
+  </div>
+</header>
+
+<main class="sing-sect">
+    <section class="auth-container">
+        <form class="auth-card" onsubmit="cadastrar(event)">
+            <h2>Criar Conta</h2>
+
+            <input type="text" id="nome" placeholder="Nome completo" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="senha" placeholder="Senha" required>
+
+            <button type="submit">Cadastrar</button>
+
+            <p class="auth-link">
+            Já tem conta?
+            <a href="login.html">Entrar</a>
+            </p>
+        </form>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 Arrenda+ Luanda · Todos os direitos reservados</p>
+        </div>
+    </footer>
+</main>
+
+<script>
+function cadastrar(e) {
+  e.preventDefault();
+
+  const nome = document.getElementById("nome").value;
+  const email = document.getElementById("email").value;
+  const senha = document.getElementById("senha").value;
+
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+  if (usuarios.some(u => u.email === email)) {
+    alert("Este email já está cadastrado");
+    return;
+  }
+
+  usuarios.push({ nome, email, senha });
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
+  alert("Conta criada com sucesso!");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

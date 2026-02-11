@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrenda+ Luanda | Casas e Apartamentos para Arrendar</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1><i class="fas fa-home"></i> Arrenda+ Luanda</h1>
+    <nav>
+      <a href="#">Início</a>
+      <a href="imoveis.html">Imóveis</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="contactos.html">Contato</a>
+      <a href="admin.html" class="btn-admin">
+        <i class="fas fa-plus-circle"></i> Administrar
+      </a>
+      <a href="login.html">
+        <i class="fa-regular fa-user"></i> Iniciar Sessão
+      </a>
+    </nav>
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="container">
+    <h2>Encontre a casa ideal para arrendar em Luanda</h2>
+    <p>Apartamentos, moradias e casas nas melhores zonas da cidade</p>
+  </div>
+</section>
+
+<section class="filtros container">
+  <div class="filtro">
+    <input type="text" id="bairro" placeholder="Bairro ou zona (Talatona, Maianga...)">
+  </div>
+
+  <div class="filtro">
+    <select id="preco">
+      <option value="">Preço máximo</option>
+      <option value="300000">Até 17.000 Kz</option>
+      <option value="300000">Até 30.000 Kz</option>
+      <option value="300000">Até 45.000 Kz</option>
+      <option value="300000">Até 70.000 Kz</option>
+      <option value="300000">Até 90.000 Kz</option>
+      <option value="300000">Até 110.000 Kz</option>
+      <option value="300000">Até 150.000 Kz</option>
+      <option value="300000">Até 190.000 Kz</option>
+      <option value="300000">Até 220.000 Kz</option>
+      <option value="300000">Até 250.000 Kz</option>
+      <option value="300000">Até 280.000 Kz</option>
+      <option value="300000">Até 300.000 Kz</option>
+      <option value="500000">Até 500.000 Kz</option>
+      <option value="800000">Até 800.000 Kz</option>
+      <option value="1200000">Até 1.200.000 Kz</option>
+      <option value="2000000">Até 2.000.000 Kz</option>
+      <option value="99999999">Sem limite</option>
+    </select>
+  </div>
+
+  <div class="filtro">
+    <select id="quartos">
+      <option value="">Quartos</option>
+      <option value="1">T1</option>
+      <option value="2">T2</option>
+      <option value="3">T3</option>
+      <option value="4">T4+</option>
+    </select>
+  </div>
+
+  <button onclick="filtrar()">Pesquisar</button>
+</section>
+
+<section class="imoveis container" id="lista-imoveis"></section>
+
+<footer>
+  <div class="container">
+    <p>© 2025 Arrenda+ Luanda · Todos os direitos reservados</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

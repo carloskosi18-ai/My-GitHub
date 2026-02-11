@@ -1,0 +1,351 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f5f6f7;
+  color: #333;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ================= HEADER ================= */
+
+header {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+header nav a:hover {
+  color: #ff6b00;
+}
+
+/* BOTÃO ADMIN */
+.btn-admin {
+  background: #ff6b00;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #fff;
+  transition: 
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-admin:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
+}
+
+.btn-admin:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0,0,0,.2);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)),
+    url("../img/index.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: white;
+  margin-top: 70px;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+/* ================= FILTROS ================= */
+
+.filtros {
+  background: white;
+  padding: 2rem;
+  margin-top: -80px;
+  border-radius: 16px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.filtro {
+  flex: 1;
+  min-width: 200px;
+}
+
+.filtro input,
+.filtro select {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  transition: 0.2s;
+}
+
+.filtro input:focus,
+.filtro select:focus {
+  outline: none;
+  border-color: #ff6b00;
+  box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+}
+
+.filtros button {
+  padding: 14px 30px;
+  background: #ff6b00;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.filtros button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.filtros button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+/* ================= IMÓVEIS ================= */
+
+.imoveis {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 14px 35px rgba(0,0,0,.2);
+}
+
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card .info {
+  padding: 1.5rem;
+}
+
+.preco {
+  color: #ff6b00;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+/* ================= BOTÃO WHATSAPP ================= */
+
+.whatsapp {
+  margin-top: 20px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37,211,102,0.35);
+  transition: 
+    background-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.whatsapp:hover {
+  background: #1ebe5d;
+  transform: scale(1.03);
+  box-shadow: 0 8px 22px rgba(37,211,102,0.55);
+}
+
+.whatsapp:active {
+  transform: scale(1);
+  box-shadow: 0 4px 12px rgba(37,211,102,0.4);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+  background: #1a1a1a;
+  color: #ccc;
+  text-align: center;
+  padding: 3rem 0;
+  margin-top: 5rem;
+}
+
+/* ================= DETALHES DO IMÓVEL ================= */
+
+.detalhe-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.detalhe-card {
+  background: #fff;
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.detalhe-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detalhe-info {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ================= LOGIN & CADASTRO ================= */
+
+.auth-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 14px;
+  background: #ff6b00;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.auth-card button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.auth-link {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.auth-link a {
+  color: #ff6b00;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.log-sect{
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)),
+    url("../img/casas.jpg") center/cover no-repeat;
+}
+
+.sing-sect{
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.7)),
+    url("../img/singin.jpg") center/cover no-repeat;
+}
+
+/* ================= RESPONSIVO ================= */
+
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.5rem;
+  }
+
+  .detalhe-card {
+    grid-template-columns: 1fr;
+  }
+
+  .detalhe-card img {
+    height: 260px;
+  }
+}

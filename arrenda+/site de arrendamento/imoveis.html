@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Imóveis Disponíveis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>Arrendamento</h1>
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<main class="container">
+  <h2>Todos os Imóveis</h2>
+
+  <div id="lista-imoveis" class="imoveis-grid"></div>
+</main>
+
+<script>
+  const lista = document.getElementById("lista-imoveis");
+
+  // 🔹 buscar TODOS os imóveis do admin
+  const imoveis = JSON.parse(localStorage.getItem("imoveis")) || [];
+
+  function renderizar() {
+    lista.innerHTML = "";
+
+    if (imoveis.length === 0) {
+      lista.innerHTML = "<p>Nenhum imóvel cadastrado.</p>";
+      return;
+    }
+
+    imoveis.forEach((imovel, index) => {
+      lista.innerHTML += `
+        <div class="card">
+          <img src="${imovel.imagem}" alt="${imovel.titulo}">
+
+          <div class="info">
+            <h3>${imovel.titulo}</h3>
+            <p>${imovel.bairro} · ${imovel.quartos} quartos</p>
+
+            <div class="preco">
+              ${imovel.preco.toLocaleString("pt-AO")} Kz / mês
+            </div>
+
+            <div class="acoes">
+              <button onclick="verDetalhes(${index})">
+                Ver detalhes
+              </button>
+
+              <a href="https://wa.me/${imovel.whatsapp}" target="_blank">
+                <button class="whatsapp">
+                  WhatsApp
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function verDetalhes(index) {
+    localStorage.setItem(
+      "imovelDetalhe",
+      JSON.stringify(imoveis[index])
+    );
+    window.location.href = "imovel.html";
+  }
+
+  renderizar();
+</script>
+
+</body>
+</html>
